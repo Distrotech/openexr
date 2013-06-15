@@ -256,14 +256,14 @@ clearExceptions ()
 const uint16_t cwRestoreMask = ~((3 << 10) | (3 << 8));
 const uint16_t cwRestoreVal = (0 << 10) | (3 << 8);
 
+#if 0
+
 inline void
 restoreControlRegs (const ucontext_t & ucon, bool clearExceptions)
 {
     setCw ((ucon.uc_mcontext.fpregs->cwd & cwRestoreMask) | cwRestoreVal);
     setMxcsr (ucon.uc_mcontext.fpregs->mxcsr, clearExceptions);
 }
-
-#if 0
 
 //
 // Ugly, the mxcsr isn't defined in GNU libc ucontext_t, but
