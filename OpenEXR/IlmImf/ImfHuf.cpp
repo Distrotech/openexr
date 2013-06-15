@@ -45,6 +45,7 @@
 //
 //-----------------------------------------------------------------------------
 
+#include <cstring>
 #include <ImfHuf.h>
 #include <ImfInt64.h>
 #include <ImfAutoArray.h>
